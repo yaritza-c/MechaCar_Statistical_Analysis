@@ -19,3 +19,7 @@ total_summary <- Suspension_Coil %>% summarize(Mean = mean(PSI), Median = median
 
 ##creates a lot_summary dataframe using the group_by() and the summarize() functions
 lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep') 
+
+##RScript using the t.test() function to determine if the PSI across all manufacturing lots is statistically different from the population mean
+?t.test()
+t.test(Suspension_Coil$PSI,mu=mean(Suspension_Coil$PSI))
